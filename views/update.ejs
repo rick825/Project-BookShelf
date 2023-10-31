@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Item</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+  
+  </style>
+</head>
+<body>
+   
+    <!-- headers -->
+    <%-include('templates/_headers.ejs') %>
+    <!-- end headers -->
+    <div class="forms">
+        <div class="formhead">
+          <h2>Update Form</h2>
+       </div>
+     <div class="formmain">
+  <form method="POST" action="/api/update" class="form">
+    <label for="fname">First Name</label>
+    <input type="text"  name="fname" value="<%= user.fname %>" ><br/>
+    <label for="lname">Last Name</label>
+    <input type="text" value="<%= user.lname %>" name="lname"><br/>
+    <label for="email">Email</label>
+    <input type="email"  name="email" value="<%= user.email %> "><br>
+    <label for="Password">Password</label>
+    <input type="password"  name="password" value="<%= user.password %>" > <br>
+    <label for="cpassword">Confirm Password</label>
+    <input type="password" name="cpassword" value="<%= user.cpassword %>"><br>
+    <button type="submit">Update</button>  
+</form>
+     </div>
+  </div>
+</body>
+</html>

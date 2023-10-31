@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="head-main">
+<!-- headers -->
+<%-include('templates/_headers.ejs')%>
+<!-- end headers -->
+<div class="profile">
+    <a href="/api/profile"><button>Profile</button></a>
+</div>
+<div class="logout">
+    <a href="/api/logout"><button>logout</button></a>
+</div>
+</div>
+  
+<!-- main section -->
+<section id="main">
+    <div class="main sec addbooks">
+      <div class="mainleft main-c">
+       <div class="mainhead">
+         <h2>Hello, Please add your Book</h2>
+       </div>
+       <div class="mainbtn">
+         <form action="/api/addbooks" method="post" class="form forms">
+            <label for="title">Title</label>
+            <input type="text" placeholder="Enter Title" name="title" required><br>
+            <label for="author">Author</label>
+            <input type="text" placeholder="Enter Author Name" name="author" required><br>
+            <label for="description">Summary</label>
+            <textarea rows="4" cols="50" placeholder="Enter Summary" name="summary"></textarea><br>
+            <button type="submit" value="Submit" onclick="saved()" id="addbook">Add Book</button>
+         </form>
+       </div>
+      </div>
+
+      <div class="mainright main-c">
+       
+          <div class="mrcont mainrcont">
+              <div class="cont1 cont">
+
+              </div>
+              <div class="cont2 cont">
+
+              </div>
+          </div>
+
+      </div>
+
+
+    </div>
+   </section>
+  <!-- end main section -->
+  
+
+
+
+ <!-- footers -->
+ <%-include('templates/_footer.ejs')%>
+ <!-- end footers -->
+</body>
+</html>

@@ -1,0 +1,32 @@
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer  sec">
+           <span>&copy; Copyright 2023, All Rights Reserved.</span>
+        </div>
+       </footer>
+       <!-- end footer -->
+          
+       <script>
+        const otpsent = () =>{
+        const sendotp = document.querySelector('#send-otp');
+        sendotp.innerHTML = 'OTP Sent';     
+        
+        console.log("OTP Sent");
+    }
+
+    function showPopup(message) {
+            const popup = document.getElementById("popup");
+            const popupMessage = document.getElementById("popupMessage");
+            popupMessage.textContent = message;
+            popup.style.display = "block";
+            console.log("Running Pop");
+        }
+    
+        // Function to reload the current page
+        function reloadPage() {
+            location.reload();
+        }
+       </script>
+       <!-- <script src="../../assets/js/app.js"></script> -->
+   </body>
+   </html>

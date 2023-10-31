@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="head-main">
+<!-- headers -->
+<%-include('templates/_headers.ejs')%>
+<!-- end headers -->
+<div class="profile">
+    <a href="/api/profile"><button>Profile</button></a>
+</div>
+<div class="logout">
+    <a href="/api/logout"><button>logout</button></a>
+</div>
+</div>
+  
+<!-- main section -->
+<section id="main">
+    <div class="main  bookdetails sec">
+      <div class="mainleft main-c">
+       <div class="mainhead">
+        <h3>Book Details - </h3>
+       </div>
+       <div class="mainbtn mainbot">
+           
+        <div class="mainbotl mbotsec">
+          <img src="https://img.icons8.com/doodle/480/amazon-kindle.png" alt="">
+        </div>
+        <div class="mainbotr mbotsec">
+           <div class="title mbot">
+             <h2><b>Title:</b></h2> 
+             <p><%= book.title %></p>
+           </div>
+           <div class="author mbot">
+            <h2><b>Author:</b></h2>
+            <p><%= book.author %></p>
+           </div>
+           <div class="summary mbot">
+            <h2><b>Summary:</b></h2> 
+             <p><%= book.summary %></p>
+           </div>
+           <div class="owner mbot">
+            <h2><b>Owner:</b></h2> 
+            <p><%= book.ownerId.fname %> <%= book.ownerId.lname %></p>
+           </div>
+        </div>
+       </div>
+      </div>
+
+      <div class="mainright main-c">
+       
+          <div class="mrcont mainrcont">
+              <div class="cont1 cont">
+
+              </div>
+              <div class="cont2 cont">
+
+              </div>
+          </div>
+
+      </div>
+
+
+    </div>
+   </section>
+  <!-- end main section -->
+  
+
+
+
+ <!-- footers -->
+ <%-include('templates/_footer.ejs')%>
+ <!-- end footers -->
+</body>
+</html>

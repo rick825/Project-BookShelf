@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="head-main">
+<!-- headers -->
+<%-include('templates/_headers.ejs')%>
+<!-- end headers -->
+<div class="profile">
+    <a href="/api/profile"><button>Profile</button></a>
+</div>
+<div class="logout">
+    <a href="/api/logout"><button>logout</button></a>
+</div>
+</div>
+  
+<!-- main section -->
+<section id="main">
+    <div class="main sec mainbooks">
+        <!-- popup -->
+        <div id="popup" class="popup" style="display: none;">
+            <p id="popupMessage"></p>
+        </div>
+        <!-- end popup -->
+      <div class="mainleft main-c">
+       <div class="mainhead">
+         <h2>Hello, Please Find your books below</h2>
+       </div>
+       <div class="mainbtn mbooks">
+          
+        <% for(let i = 0; i < books.length;i++){ %>
+        <!-- book -->
+            <div class="book">
+                <div class="bookinfo">
+                  <div class="bookimg">
+                    
+                  </div>
+                  <div class="bookp">
+                    <p><b>Title</b> : <%- books[i].title%></p>
+                     <p><b>Author</b> : <%- books[i].author%></p>
+                     <p><b>Summary</b> : <%- books[i].summary%></p>
+                  </div>
+                </div>
+                <div class="btn">
+                    <form action="/api/updateredirect" method="post">
+                     <input type="hidden" name="bookid" value="<%= books[i]._id%>">   
+                    <button>Update</button>
+                    </form>
+                    <form action="/api/deletebook" method="post">
+                        <input type="hidden" name="bookid" value="<%= books[i]._id%>" >
+                        <button>Delete</button>
+                    </form>
+                </div>
+            </div>
+        <!-- end book -->
+        <% } %>
+       
+        <div class="mbtn">
+            <a href="/addbooks"><button class="abook" > Add Books</button></a>
+           </div>
+       </div>
+
+       
+
+      </div>
+
+      <div class="mainright main-c">
+       
+          <div class="mrcont mainrcont">
+              <div class="cont1 cont">
+
+              </div>
+              <div class="cont2 cont">
+
+              </div>
+          </div>
+
+      </div>
+
+
+    </div>
+   </section>
+  <!-- end main section -->
+  
+
+
+
+ <!-- footers -->
+ <%-include('templates/_footer.ejs')%>
+ <!-- end footers -->
+</body>
+</html>

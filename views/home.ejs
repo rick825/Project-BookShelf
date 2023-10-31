@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="head-main">
+<!-- headers -->
+<%-include('templates/_headers.ejs')%>
+<!-- end headers -->
+<div class="profile">
+    <a href="/api/profile"><button>Profile</button></a>
+</div>
+<div class="logout">
+    <a href="/api/logout"><button>logout</button></a>
+</div>
+</div>
+  
+<!-- main section -->
+<section id="main">
+    <div class="main  sec">
+      <div class="mainleft main-c">
+       <div class="mainhead">
+         <h2>Hello <%- user.fname%> <%- user.lname%></h2>
+         <h3>Welcome to Your BookShelf!! </h3>
+       </div>
+       <div class="mainbtn">
+          <div class="mpara">
+              <!-- <h4>Please Login or Register</h4> -->
+          </div>
+          <div class="mbtn">
+            <a href="/addbooks"><button class="abook" >Add Books</button></a>
+       <button class="explore">Explore</button>
+      </div>
+       </div>
+      </div>
+
+      <div class="mainright main-c">
+       
+          <div class="mrcont mainrcont">
+              <div class="cont1 cont">
+
+              </div>
+              <div class="cont2 cont">
+
+              </div>
+          </div>
+
+      </div>
+
+
+    </div>
+   </section>
+  <!-- end main section -->
+  
+
+
+
+ <!-- footers -->
+ <%-include('templates/_footer.ejs')%>
+ <!-- end footers -->
+</body>
+</html>

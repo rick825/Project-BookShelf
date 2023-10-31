@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="head-main">
+<!-- headers -->
+<%-include('templates/_headers.ejs')%>
+<!-- end headers -->
+<div class="profile">
+    <a href="/api/profile"><button>Profile</button></a>
+</div>
+<div class="logout">
+    <a href="/api/logout"><button>logout</button></a>
+</div>
+</div>
+  
+<!-- main section -->
+<section id="main">
+    <div class="main mainbooks allbooks sec">
+      <div class="mainleft main-c ">
+       <div class="mainhead">
+         <h3>Welcome to the BookShelf!! </h3>
+       </div>
+       <div class="allbooksec mbooks mainbtn">
+
+        <% for(let i = 0; i < allbooks.length; i++ ) { %>
+             <!-- book -->
+             <div class="book">
+                <div class="bookinfo">
+                  <div class="bookimg">
+                    
+                  </div>
+                  <div class="bookp">
+                    <p><b>Title</b> <br> : <%= allbooks[i].title %> </p>
+                     <p><b>Uploaded By</b> <br> : <%= allbooks[i].ownerId.fname %> <%= allbooks[i].ownerId.lname %> </p>
+                  </div>
+                  <div class="btn">
+                  <form action="/api/bookdetails" method="post">
+                    <input type="hidden" name="bookid" value="<%= allbooks[i]._id %>">   
+                   <button>Show Details</button>
+                   </form>
+                </div>
+                </div>
+            </div>
+        <!-- end book -->
+        <% } %>
+       </div>
+      </div>
+
+      <!-- <div class="mainright main-c">
+       
+          <div class="mrcont mainrcont">
+              <div class="cont1 cont">
+
+              </div>
+              <div class="cont2 cont">
+
+              </div>
+          </div>
+
+      </div> -->
+
+
+    </div>
+   </section>
+  <!-- end main section -->
+  
+
+
+
+ <!-- footers -->
+ <%-include('templates/_footer.ejs')%>
+ <!-- end footers -->
+</body>
+</html>

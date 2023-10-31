@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+  }
+
+  .user-info {
+    text-align: center;
+  }
+
+  .user-info h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .user-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #666;
+  }
+
+
+  .update-profile button{
+    padding: 1rem;
+    cursor: pointer;
+  }
+</style>
+<title>User Profile</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- headers  -->
+  <%-include('templates/_headers.ejs')%>
+  <!-- end headers -->
+
+  <div class="profile-container">
+    <div class="update-profile">
+      <a href="/update-profile"><button>Update</button></a>
+    </div>
+    <img class="profile-picture" src="profile-picture.jpg" alt="Profile Picture">
+    <div class="user-info">
+      <h1><%- user.fname%> <%- user.lname%></h1>
+      <p>✔Email: <%-user.email%></p>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
