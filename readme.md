@@ -35,6 +35,8 @@
   - Just need 'npm' in the system and in the project directory "npm start" will make it run.
   - But for login and registration, it will not work , because i am using a third party "OTP generating API" which is Twillio, so for getting otp in the random mobile phone, i have get it verify with the twillio client.
   - In My case i have my mobile number verified with twillio client, you can just enter the number and hit send otp , otp will be there in the console use it and you are good to go.
+  - Use (9693195907) for login.
+  - OTP will be there in console.
 
   
 
