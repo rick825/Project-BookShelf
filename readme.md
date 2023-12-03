@@ -4,8 +4,8 @@
 ✔It has a login and Registration Page.
 ✨The user can register by providing their name, mobile and email.
 🔑After registration the user will be redirected to login page where they login using otp to there mobile.
-📚Once logged in, there will be  home page where explore button is there , the user can see all registered books in here.
-📚User can also add there books there.
+📚Once logged in, there will be  home page with explore button , the user can see all registered books in here.
+📚User can also add  books.
 🌐Each book have title, author and summary.
 
 
